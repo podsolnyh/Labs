@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double a, S, P;
+	cout << "Enter area value:";
+	cin >> S;
+	a = sqrt(S);
+	P = 4 * a;
+	cout << "The perimeter value is:" << P<<endl;
+	return 0;
+}
