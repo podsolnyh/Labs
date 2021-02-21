@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Enter number n:";
+	cin >> n;
+	if (10 <= n && n<=99) {
+		int c0 = n / 10;
+		int c2 = n % 10;
+		int x = 100 * c0 + c2;
+		cout <<"The number x is:" << x <<endl;
+		return 0;
+	}
+	else if (99 <= n && n<= 999) {
+		int c0 = n / 100;
+		int c1 = (n % 100) / 10;
+		int c2 = n % 10;
+		int x = 100 * c1+10*c0 + c2;
+		cout << "The number x is:" << x << endl;
+		return 0;
+	}
+	system("pause");
+}
+
