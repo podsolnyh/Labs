@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	float a, b, c;
+	cout << "Enter real numbers:";
+	cin >> a >> b >> c;
+	if (a > 0) {
+		a = pow(a, 2);
+	}
+	if (b > 0) {
+		b = pow(b, 2);
+	}
+	if (c > 0) {
+		c = pow(c, 2);
+	}
+	
+	cout << "Received numbers:";
+	cout << setw(3) << a << setw(3) << b << setw (3)<< c << setw(3) << endl;
+	return 0;
+
+}
