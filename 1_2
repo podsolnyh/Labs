@@ -1,25 +1,26 @@
-#include "stdafx.h"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	int x,sum,compos;
+	int x, sum, compos;
 	cout << "enter your number: ";
-	cin >> x; 
+	cin >> x;
 	if (x < 999) {
 		cout << "your number is less than four digits ";
 		return 0;
 	}
-	if (x > 9999) {
+	else if (x > 9999) {
 		cout << "your number is more than four digits ";
 		return 0;
 	}
-	int c1 = x / 100, c2 = x / 10 % 10, c3 = 100 % 10, c4 = x % 10;
-	sum = c1 + c2 + c3 + c4;
-	compos = c1*c2*c3*c4;
-	cout << "the sum of the digits is:"<<sum<<endl;
-	cout << "compositions of the digits is:"<<compos<<endl;
-	
-	return 0;
+	else {
+		int digit1 = x / 1000, digit2 = (x / 10) % 10, digit3 = (x/100) % 10, digit4 = x % 10;
+		sum = digit1 + digit2 + digit3 + digit4;
+		compos = digit1*digit2*digit3*digit4;
+		cout << "the sum of the digits is:" << sum << endl;
+	    cout << "compositions of the digits is:" << compos << endl;
+		return 0;
+	}
 }
+
