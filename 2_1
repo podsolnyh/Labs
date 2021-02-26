@@ -1,0 +1,18 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int year_number;
+	cout << "enter the year number:";
+	cin >> year_number;
+	if (year_number % 4 == 0) { //високосный год
+		cout << "in the entered year 366 days"<<endl;
+		return 0;
+    }
+	else if (year_number % 4 != 0) {
+		cout << "in the entered year 365 days" << endl;
+		return 0;
+	}
+}
