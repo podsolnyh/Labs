@@ -7,15 +7,28 @@ int main()
 	cout << "Enter real numbers:";
 	cin >> a >> b >> c;
 	if (a + b > c && b + c > a && a + c > b) {
-		cout << "triangle exists";
-	
+		cout << "triangle exists"<<endl;
+		if (pow(a, 2) + pow(b, 2) == pow(c, 2)) {
+			cout << "triangle is rectangular!";
+		}
+		else if (pow(a, 2) + pow(c, 2) == pow(b, 2)) {
+			cout << "triangle is rectangular!";
+		}
+		else if (pow(b, 2) + pow(c, 2) == pow(a, 2)) {
+			cout << "triangle is rectangular!";
+		}
+		else {
+			cout << "triangle is not rectangular!";
+		}
 	}
+
 	else {
 		cout << "triangle does not exist!";
 	}
-	
-	
-	
+
+
+
 	return 0;
 }
+
 
