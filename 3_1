@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int N, days = 0;
+	cout << "Enter the amount of hair:";
+	cin >> N;
+	while (N != 0) {
+			N = N - max(1, N / 10);
+			days++;
+	}
+	cout <<"The number of days in which all hair will fall out:"<<days;
+	return 0;
+ }
+
