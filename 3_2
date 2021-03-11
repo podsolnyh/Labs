@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	int a,j=0;
+	for (int i = 0; i < 30; i++)
+	{
+		cout << "Enter information about " << i+1 << " model:";
+		cin >> a;
+		if (a > 200) {
+			j++;
+		}
+	}
+	if (j > 0) {
+		cout << "Among the 30 models, there is an engine with power > 200 ";
+	}
+	else {
+		cout << "Among the 30 models, there are no engines with power > 200 ";
+	}
+
+	return 0;
+ }
