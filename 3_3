@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int quantity,max=0;
+	for (int i = 1; i <= 30; i++)
+	{
+
+		cout << "Enter the amount of precipitation in " << i << " day:";
+		cin >> quantity;
+		if (i == 1 || quantity > max) {
+			max = quantity;
+			i
+			
+		}
+		
+		
+	}
+	cout << 
+	return 0;
+}
+
