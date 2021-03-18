@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int m,x,p,counter=0;
+    cout << "Enter sequence dimension:";
+    cin >> m;
+    cout << "Enter number p:";
+    cin >> p;
+    for (int a = 0; a < m; a++) {
+        cout << "Enter information about " << a + 1<<" number:";
+        cin >> x;
+        if (x > m ) {
+            counter++;
+        }
+    }
+    if (counter % p == 0) {
+        cout << "True";
+    }
+    else {
+        cout << "False";
+    }
+    return 0;
+
+
+}
