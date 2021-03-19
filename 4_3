@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string ss;
+	int k=0;
+	cout << "Enter string:";
+	while (cin >> ss) ++k;
+
+
+	cout << "Amount of words in a sentence:" << k << endl;
+
+
+	return 0;
+
+}
