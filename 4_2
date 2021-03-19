@@ -1,0 +1,42 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int firstshop, secondshop, thirdshop, quantity, max = 0, day_firstshop, day_secondshop, day_thirdshop, quantity1, quantity2, quantity3;
+
+	for (int i = 0; i < 10; i++) {
+		cout << "Enter information about " << i + 1 << " day first store:";
+		cin >> firstshop;
+		if (firstshop >= max) {
+			max = firstshop;
+
+			day_firstshop = i + 1;
+		}
+	}
+           cout << "Day with max earnings first store:" << day_firstshop << endl;
+	for (int j = 0; j < 10; j++) {
+		cout << "Enter information about " << j+ 1 << " day second store:";
+		cin >> secondshop;
+		if (secondshop >= max) {
+			max = secondshop;
+			day_secondshop = j + 1;
+		}
+	}
+	cout << "Day with max earnings second store:" << day_secondshop << endl;
+	for (int k = 0; k < 10; k++) {
+		cout << "Enter information about " << k + 1 << " day third store:";
+		cin >> thirdshop;
+		if (thirdshop >= max) {
+			max = thirdshop;
+	
+			day_thirdshop = k + 1;
+		}
+	}
+	cout << "Day with max earnings second store:" << day_thirdshop << endl;
+
+
+	return 0;
+
+}
