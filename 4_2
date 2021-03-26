@@ -1,42 +1,42 @@
 #include "stdafx.h"
 #include <iostream>
+#include <algorithm>
 using namespace std;
+
 
 int main()
 {
-	int firstshop, secondshop, thirdshop, quantity, max = 0, day_firstshop, day_secondshop, day_thirdshop, quantity1, quantity2, quantity3;
-
-	for (int i = 0; i < 10; i++) {
-		cout << "Enter information about " << i + 1 << " day first store:";
-		cin >> firstshop;
-		if (firstshop >= max) {
-			max = firstshop;
-
-			day_firstshop = i + 1;
-		}
-	}
-           cout << "Day with max earnings first store:" << day_firstshop << endl;
-	for (int j = 0; j < 10; j++) {
-		cout << "Enter information about " << j+ 1 << " day second store:";
-		cin >> secondshop;
-		if (secondshop >= max) {
-			max = secondshop;
-			day_secondshop = j + 1;
-		}
-	}
-	cout << "Day with max earnings second store:" << day_secondshop << endl;
-	for (int k = 0; k < 10; k++) {
-		cout << "Enter information about " << k + 1 << " day third store:";
-		cin >> thirdshop;
-		if (thirdshop >= max) {
-			max = thirdshop;
 	
-			day_thirdshop = k + 1;
-		}
+	int mx1 = 0, mx2 = 0, mx3 = 0;
+	int nx1 = 1, nx2 = 0, nx3 = 0;
+	for (int i = 0; i < 10; ++i) {
+		int x, y, z, mx = 0, nx = 1;;
+		cout << "Enter information about " << i + 1 <<" day" <<endl;
+		cout << "First store recieved:";
+		cin >> x;
+		cout << "Second store recieved:";
+		cin >> y;
+		cout << "Third store recieved:";
+		cin >> z;
+		if (x > mx1)mx1 = x, nx1 = i + 1;
+		if (y > mx2)mx2 = y, nx2 = i + 1;
+		if (z > mx3)mx3 = z, nx3 = i + 1;
+
+		mx = max(x, max(y, z));
+
+		if (x == mx)nx = 1;
+		if (y == mx)nx = 2;
+		if (z == mx)nx = 3;
+
+		cout << "Store number "<<nx <<" received the max earnings in " << i + 1 << " day" << endl;
+
+
 	}
-	cout << "Day with max earnings second store:" << day_thirdshop << endl;
 
+	cout << endl;
 
-	return 0;
+	cout<< "First store received the max earnings in" << nx1 <<" day"<< endl;
+	cout<< "Second store received the max earnings in " << nx2 <<" day"<< endl;
+	cout<< "Third store received the max earnings in "<< nx3 << " day" << endl;
 
 }
