@@ -1,27 +1,25 @@
+#include "stdafx.h"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int m,x,p,counter=0;
-    cout << "Enter sequence dimension:";
-    cin >> m;
-    cout << "Enter number p:";
-    cin >> p;
-    for (int a = 0; a < m; a++) {
-        cout << "Enter information about " << a + 1<<" number:";
-        cin >> x;
-        if (x > m ) {
-            counter++;
-        }
-    }
-    if (counter % p == 0) {
-        cout << "True";
-    }
-    else {
-        cout << "False";
-    }
-    return 0;
-
+	int m, x, p, counter = 0;
+	cout << "Enter sequence dimension:";
+	cin >> m;
+	cout << "Enter number p:";
+	cin >> p;
+	if (p == 0)cout << "You can't divide by zero"<<endl; 
+	else {
+		for (int a = 0; a < m; a++) {
+			cout << "Enter information about " << a + 1 << " number:";
+			cin >> x;
+			if (x > m) {
+				counter++;
+			}
+		}
+		cout << ((counter % p == 0 && counter != 0) ? "True" : "False") << endl;
+	}
+	return 0;
 
 }
