@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+SetConsoleCP(1251);
+SetConsoleOutputCP(1251);
+string s;
+bool f = 1;
+int mx = 0;
+while (cin » s)mx = max(mx, s.size());
+if (mx != 10)f = 0;
+cout « ((f == 1) ? "yes" : "NO");
+}
