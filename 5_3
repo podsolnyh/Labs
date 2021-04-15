@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+
+int Perimeter(int a,int b,int c) {
+	int P;
+	P = a + b + c;
+	return P;
+}
+double Square(int a, int b, int c) {
+	double S;
+	int p = (a + b + c)/2;
+	S = sqrt(p * (p - a) * (p - b) * (p - c));
+	return S;
+}
+int main()
+{
+	int x, y, z,
+		i,j,k;
+	cout << "Enter the side values first triangle" << endl;
+	cin >> x >> y >> z;
+	cout << "Enter the side values second triangle" << endl;
+	cin >> i >> j >> k;
+
+	int P=Perimeter(x, y, z);
+	double S = Square(x, y, z);
+	int P_2 = Perimeter(i, j, k);
+	double S_2 = Square(i, j, k);
+	cout << "Sum perimeters = " << P + P_2 << endl;
+	cout << "Sum squares = " << S + S_2 << endl;
+}
