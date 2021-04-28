@@ -1,0 +1,26 @@
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+int main()
+{
+	int n;
+	bool flag = 0;
+	cout << "Enter dimension of array:";
+	cin >> n;
+	int* arr = new int[n];
+	for (int i = 0; i < n; ++i) {
+		cout << "Enter " << i + 1 << " number:";
+		cin >> arr[i];
+	}
+	cout << "Received elements ";
+	for (int i = 0; i < n; ++i) {
+		if ((arr[i] % 10 == 7||arr[i]==7) && i != n - 1) {
+			
+			cout << " " << arr[i + 1];
+			flag = 1;
+		}
+
+		
+	}
+	if (flag == 0) { cout << "no such elements!!!"; }
+}
