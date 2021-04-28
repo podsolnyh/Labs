@@ -1,0 +1,46 @@
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+//int main()
+//{
+//	double* arr1 = new double[5];
+//	double* arr2 = new double[5];
+//	double* arr3 = new double[5];
+//	
+//	for (int i = 0; i < 5; ++i) {
+//		cout << "Enter distance traveled " << i + 1 << " auto:";
+//		cin >> arr1[i];
+//	}
+//	cout << endl;
+//	for (int i = 0; i < 5; ++i) {
+//		cout << "Enter elapsed time " << i + 1 << " auto:";
+//		cin >> arr2[i];
+//	}
+//	for (int i = 0; i < 5; ++i) {
+//		arr3[i] = arr1[i] / arr2[i];
+//	}
+//	int m = arr3[0];
+//	for (int i = 0; i < 5; i++) {
+//		if (arr3[i] <= m)
+//			m = arr3[i];
+//	}
+//	cout <<"Average minimal speed:"<< m;
+//}
+int main()
+{
+	double* arr = new double[5];
+	int path, time;
+	for (int i = 0; i < 5; ++i) {
+		cout << "Enter distance traveled " << i + 1 << " auto:";
+		cin >> path;
+		cout << "Enter elapsed time " << i + 1 << " auto:";
+		cin >> time;
+		arr[i] = path / time;
+	}
+	int m = arr[0];
+	for (int i = 0; i < 5; i++) {
+				if (arr[i] <= m)
+					m = arr[i];
+			}
+	cout << "Average minimal speed:" << m;
+}
