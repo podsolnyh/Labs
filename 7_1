@@ -1,0 +1,44 @@
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int rows=3, cols=3,negative,uneven;
+	int** arr = new int*[rows];
+	for (int i = 0; i < cols; i++) {
+		arr[i] = new int[cols];
+	}
+	for (int j = 0; j < cols; j++) {
+		for (int i = 0; i < rows; i++) {
+			cout << "arr" << "["<<i<<"]" << "["<<j<<"]""=";
+			cin >> arr[j][i];
+		}
+	}
+	for (int i = 0; i < rows; i++) {
+		if(i>0)cout << endl;
+		for (int j = 0; j < cols; j++) {
+			cout << setw(4) << arr[j][i];
+		}
+	}
+	//for (int j = 0; j < cols; j++) {
+	//	for (int i = 0; i < rows; i++) {
+	//		if (arr[j][i]<0) {
+	//			negative= arr[j][i];
+	//           
+	//		}
+	//	}
+	//	cout << "\nNegative number in " << j + 1 << " columns: " << negative;
+	//}
+	for (int j = 0; j < cols; j++) {
+		for (int i = 0; i < rows; i++) {
+			if (arr[j][i] % 2 != 0) {
+				uneven = arr[j][i];
+				break;
+			}
+		}
+			cout << "\nUneven number in " << j + 1 << " columns: " << uneven;
+	
+	}
+
+	delete[] arr;
+}
