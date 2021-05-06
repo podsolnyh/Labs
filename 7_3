@@ -1,0 +1,87 @@
+#include <iostream>
+
+ #include <iomanip>
+
+ #include <ctime>
+
+#include <cstdlib>
+
+ #define n 2
+
+ #define m 15
+
+
+
+ using namespace std;
+
+
+
+ int main() {
+
+ setlocale(0, "russian");
+
+ double sum = 0; double count = 0; double result;
+
+
+
+ int** cars = new int* [n];
+
+ for (int i = 0; i < n; i++)
+
+ cars[i] = new int[m];
+
+
+ cout << "1- легковая машина " << endl
+ cout << "введите информацию о машинах : " << endl;
+
+ for (int i = 0; i < n; i++) {
+
+ for (int j = 0; j < m; j++)
+
+ cin >> cars[i][j];
+
+ }
+
+
+
+ for (int i = 0; i < n; i++) {
+
+ for (int j = 0; j < m; j++)
+
+ cout << setw(5) << cars[i][j];
+ cout << endl;
+
+ }
+
+
+ for (int i = 0; i < n; i++) {
+
+ for (int j = 0; j < m; j++)
+
+ if (cars[0][j] == 1 && cars[1][j] > 0) { // если под 1 отрицательный элемент, то он не учитывается
+
+ count++;
+
+ sum += cars[1][j];
+
+ }
+
+
+
+ }
+
+ result = sum / count;
+
+ cout << "итого: " << result << endl;
+
+
+
+
+
+
+
+system("pause");
+
+return 0;
+
+ }
