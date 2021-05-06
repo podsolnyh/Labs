@@ -1,0 +1,99 @@
+
+
+ #include <iostream>
+
+ #include <ctime>
+
+ #include <iomanip>
+
+ #include <cstdlib>
+
+ using namespace std;
+
+
+
+ int main(void)
+ {
+
+srand((time(NULL)));
+
+ int N, k = 0;
+
+ int** mat;
+
+ int* arr;
+
+ cout << "Enter N -> ";
+
+ cin >> N;
+
+ mat = new int* [N];
+
+ arr = new int[(N * N / 2 - 1)];
+
+cout << "Matrix: " << endl;
+
+ for (int i = 0; i < N; i++)
+ {
+
+ mat[i] = new int[N];
+
+ for (int j = 0; j < N; j++)
+
+ {
+
+ mat[i][j] = rand() % 30;
+
+ cout << setw(5) << mat[i][j];
+
+ }
+
+ cout << endl;
+
+ }
+
+
+
+ cout << endl << "Array -> ";
+
+ for (int i = 0; i < N; i++)
+
+{
+
+ for (int j = 0; j < N; j++)
+
+ {
+
+ if (i < j)
+
+ {
+
+ arr[k] = mat[i][j];
+
+ cout << arr[k] << " ";
+
+ k++;
+
+ }
+
+ }
+
+}
+
+for (int i = 0; i < N; i++)
+
+ {
+
+delete mat[i];
+
+ }
+
+ delete[] mat;
+
+delete[] arr;
+
+system("pause");
+
+return 0;
+
+}
