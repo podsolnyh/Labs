@@ -1,0 +1,54 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+using namespace std;
+int main()
+ {
+
+ vector<string> lines;
+	 ifstream fin("input.txt");
+	 while (!fin.eof())
+	 {
+		 string temp;
+		 getline(fin, temp);
+		 lines.push_back(temp);
+		 cout << temp << endl;
+	 }
+	 fin.close();
+	 vector<string> even_Lines;
+	vector<string> not_Even_Lines;
+	 for (int i = 0; i < lines.size(); i++)
+
+		 {
+		 if (i % 2 != 0) {
+			 even_Lines.push_back(lines[i]);			
+		}
+		 else {
+			 not_Even_Lines.push_back(lines[i]);
+			
+		}
+		 }
+	 ofstream fout;
+	 fout.open("first_output.txt");
+	 if (fout.is_open()) {
+
+		 for (auto line : even_Lines) {
+
+			 fout << line << endl;
+
+		
+		}
+		
+	}
+ fout.close();
+	 fout.open("second_output.txt");
+	 if (fout.is_open()) {
+		 for (auto line : not_Even_Lines) {
+			 fout << line << endl;
+			
+		}		
+	}
+	 fout.close();
+	return 0;
+	 }
