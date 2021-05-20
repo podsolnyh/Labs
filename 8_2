@@ -1,0 +1,43 @@
+#include <iostream>
+#include <Windows.h>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+vector<int> numbers;
+string FileName;
+cin >> FileName;
+ifstream fin(FileName);
+	while (!fin.eof())
+		 {
+		 int temp;
+		 fin >> temp;
+		 numbers.push_back(temp);
+		 }
+	 fin.close();	
+		 for (int i = 0; i < numbers.size(); i++)
+		 {
+		 if (numbers[i] == 0) {
+			 auto iter = numbers.cbegin();
+			 numbers.erase(iter + i + 1);
+			 break;			
+		}
+		 }
+	ofstream fout;
+	 fout.open("output.txt");
+	 if (fout.is_open()) {
+
+		 for (auto number : numbers) {
+
+			 fout << number << " ";
+
+		
+		}
+
+		
+	}
+
+	 return 0;
+ }
